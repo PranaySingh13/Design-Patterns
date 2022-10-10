@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Factory Method Pattern</title>
+</head>
+<style>
+    h1{
+    color:red;
+    }
+    h4{
+    color:green;
+    }
+</style>
+<body>
+<h1>Factory Method Pattern</h1>
+<p>A Factory Pattern or Factory Method Pattern says that just define an interface or abstract class for creating an object but let the subclasses decide which class to instantiate. In other words, subclasses are responsible to create the object of the class.</p>
+<p>The Factory Method Pattern is also known as Virtual Constructor.</p>
+<h1>Advantage of Factory Design Pattern</h1>
+<ul>
+  <li>Factory Method Pattern allows the sub-classes to choose the type of objects to create.</li>
+  <li>It promotes the loose-coupling by eliminating the need to bind application-specific classes into the code. That means the code interacts solely with the resultant interface or abstract class, so that it will work with any classes that implement that interface or that extends that abstract class.</li>
+</ul>
+<h1>Usage of Factory Design Pattern</h1>
+<ul>
+  <li>When a class doesn't know what sub-classes will be required to create</li>
+  <li>When a class wants that its sub-classes specify the objects to be created.</li>
+  <li>When the parent classes choose the creation of objects to its sub-classes.</li>
+</ul>
+<h1>UML for Factory Method Pattern</h1>
+<ul>
+  <li>We are going to create a Plan abstract class and concrete classes that extends the Plan abstract class. A factory class GetPlanFactory is defined as a next step.</li>
+  <li>GenerateBill class will use GetPlanFactory to get a Plan object. It will pass information (DOMESTICPLAN / COMMERCIALPLAN / INSTITUTIONALPLAN) to GetPalnFactory to get the type of object it needs.
+  </li>
+</ul>
+<h1>Calculate Electricity Bill : A Real World Example of Factory Method</h1>
+<p>Step 1: Create a Plan abstract class.</p>
+<p>Step 2: Create the concrete classes that extends Plan abstract class.</p
+<p>Step 3: Create a GetPlanFactory to generate object of concrete classes based on given information..</p>
+<p>Step 4: Generate Bill by using the GetPlanFactory to get the object of concrete classes by passing an information such as type of plan DOMESTICPLAN or COMMERCIALPLAN or INSTITUTIONALPLAN.</p>
+</body>
+</html>
