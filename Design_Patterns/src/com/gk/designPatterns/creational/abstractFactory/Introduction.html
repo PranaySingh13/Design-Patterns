@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Abstract Factory Pattern</title>
+</head>
+<style>
+    h1{
+    color:red;
+    }
+    h4{
+    color:green;
+    }
+</style>
+<body>
+<h1>Abstract Factory Pattern</h1>
+<p>Abstract Factory Pattern says that just define an interface or abstract class for creating families of related (or dependent) objects but without specifying their concrete sub-classes.That means Abstract Factory lets a class returns a factory of classes. So, this is the reason that Abstract Factory Pattern is one level higher than the Factory Pattern.</p>
+<p>An Abstract Factory Pattern is also known as Kit.</p>
+<h1>Advantage of Abstract Factory Pattern</h1>
+<ul>
+    <li>Abstract Factory Pattern isolates the client code from concrete (implementation) classes.</li>
+    <li>It eases the exchanging of object families.</li>
+    <li>It promotes consistency among objects.</li>
+</ul>
+<h1>Usage of Abstract Factory Pattern
+</h1>
+<ul>
+    <li>When the system needs to be independent of how its object are created, composed, and represented.</li>
+    <li>When the family of related objects has to be used together, then this constraint needs to be enforced.</li>
+    <li>When you want to provide a library of objects that does not show implementations and only reveals interfaces.</li>
+    <li>When the system needs to be configured with one of a multiple family of objects.</li>
+</ul>
+<h1>UML for Abstract Factory Pattern</h1>
+<ul>
+    <li>We are going to create a Bank interface and a Loan abstract class as well as their sub-classes.</li>
+    <li>Then we will create AbstractFactory class as next step.</li>
+    <li>Then after we will create concrete classes, BankFactory, and LoanFactory that will extends AbstractFactory class</li>
+    <li>After that, AbstractFactoryPatternExample class uses the FactoryCreator to get an object of AbstractFactory class.</li>
+</ul>
+<h1>Example of Abstract Factory Pattern
+</h1>
+<h4>Here, we are calculating the loan payment for different banks like HDFC, ICICI, SBI etc</h4>
+<p>Step 1: Create a Bank interface</p>
+<p>Step 2: Create concrete classes that implement the Bank interface.</p>
+<p>Step 3: Create the Loan abstract class.</p>
+<p>Step 4: Create concrete classes that extend the Loan abstract class..</p>
+<p>Step 5: Create an abstract class (i.e AbstractFactory) to get the factories for Bank and Loan Objects.</p>
+<p>Step 6: Create the factory classes that inherit AbstractFactory class to generate the object of concrete class based on given information.</p>
+<p>Step 7: Create a FactoryCreator class to get the factories by passing an information such as Bank or Loan.</p>
+<p>Step 8: Use the FactoryCreator to get AbstractFactory in order to get factories of concrete classes by passing an information such as type.</p>
+</body>
+</html>
