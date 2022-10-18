@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Singleton design pattern</title>
+</head>
+<style>
+    h1{
+    color:red;
+    }
+    h4{
+    color:green;
+    }
+</style>
+<body>
+<h1>Singleton design pattern</h1>
+<p>Singleton Pattern says that just"define a class that has only one instance and provides a global point of access to it".</p>
+<p>In other words, a class must ensure that only single instance should be created and single object can be used by all other classes.</p>
+<p>There are two forms of singleton design pattern</p>
+<ul>
+  <li><b>Early Instantiation:</b> creation of instance at load time.</li>
+  <li><b>Lazy Instantiation:</b> creation of instance when required.</li>
+</ul>
+<h1>Advantage of Singleton design pattern</h1>
+<p>Saves memory because object is not created at each request. Only single instance is reused again and again.</p>
+<h1>Usage of Singleton design pattern</h1>
+<p>Singleton pattern is mostly used in multi-threaded and database applications. It is used in logging, caching, thread pools, configuration settings etc.</p>
+<h1>How to create Singleton design pattern?</h1>
+<p>To create the singleton class, we need to have static member of class, private constructor and static factory method.</p>
+<p>Static member: It gets memory only once because of static, it contains the instance of the Singleton class.</p>
+<p>Private constructor: It will prevent to instantiate the Singleton class from outside the class.</p>
+<p>Static factory method: This provides the global point of access to the Singleton object and returns the instance to the caller.</p>
+
+<h4>Understanding early Instantiation of Singleton Pattern</h4>
+<p>In such case, we create the instance of the class at the time of declaring the static data member, so instance of the class is created at the time of classloading.</p>
+<ul>
+    <li>Very simple to implement.</li>
+    <li>May lead to resource wastage. Because instance of class is created always, whether it is required or not.</li>
+    <li>CPU time is also wasted in creation of instance if it is not required.</li>
+    <li>Exception handling is not possible.</li>
+</ul>
+<p><b>To handle exceptions</b>, The only difference is object is created in a static block so that we can have access on its creation, like exception handling. In this way also, object is created at the time of class loading.
+    It can be used when there is a chance of exceptions in creating object with early initialization</p>
+<ul>
+    <li>Very simple to implement.</li>
+    <li>May lead to resource wastage. Because instance of class is created always, whether it is required or not.</li>
+    <li>CPU time is also wasted in creation of instance if it is not required.</li>
+    <li>Exception handling is possible.</li>
+</ul>
+
+<h4>Understanding lazy Instantiation of Singleton Pattern</h4>
+<p>In such case, we create the instance of the class in synchronized method or synchronized block, so instance of the class is created when required.</p>
+<h4> Double check locking mechanism.</h4>
+<h4>Note: We should not synchronized public static getInstance method but the block which creates instance should be synchronized so that minimum number of threads have to wait and that’s only for first time.</h4>
+<ul>
+    <li>Lazy initialization is possible.</li>
+    <li>It is also thread safe.</li>
+    <li>Performance overhead gets reduced because of synchronized keyword.</li>
+    <li>For First time, it can affect performance.</li>
+</ul>
+<h4>Understanding Real Example of Singleton Pattern</h4>
+<ul>
+    <li>We are going to create a JDBCSingleton class. This JDBCSingleton class contains its constructor as private and a private static instance jdbc of itself.</li>
+    <li>JDBCSingleton class provides a static method to get its static instance to the outside world. Now, JDBCSingletonDemo class will use JDBCSingleton class to get the JDBCSingleton object.</li>
+</ul>
+</body>
+</html>
